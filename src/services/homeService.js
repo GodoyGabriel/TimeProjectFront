@@ -1,6 +1,5 @@
 import http from 'axios';
 import Config from '../utils/config';
-
 export default class HomeService {
   static getTimeSV = async () => {
     let response = {
@@ -8,9 +7,10 @@ export default class HomeService {
       error: ''
     };
     const config = Config.getHeaderConfig();
+    const urlBack = Config.getUrlBack();
     await http
       .get(
-        `${process.env.REACT_APP_API_URL}/time`,
+        `${urlBack}/time`,
         config
       )
       .then(res => {
@@ -28,9 +28,10 @@ export default class HomeService {
       error: ''
     };
     const config = Config.getHeaderConfig();
+    const urlBack = Config.getUrlBack();
     await http
       .get(
-        `${process.env.REACT_APP_API_URL}/metrics`,
+        `${urlBack}/metrics`,
         config
       )
       .then(res => {

@@ -25,7 +25,7 @@ export default function LeftHand({ callMetrics, error }) {
   });
 
   useEffect(() => {
-    if (differenceTime && Number(differenceTime.substr(6, 8)) % 5 === 0) {
+    if (differenceTime && Number(differenceTime.substr(6, 8)) % 30 === 0) {
       callMetrics(true);
       getTimeSV();
     }
